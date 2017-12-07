@@ -24,6 +24,7 @@ namespace RTR.IT.AS.Api
                 TokenEndpointPath = new PathString("/oauth2/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
                 Provider = new OAuthAuthorizarionServerProvider(),
+                RefreshTokenProvider = new OAuthRefreshTokenProvider(),
                 AccessTokenFormat = new AppJwtFormat(System.Web.HttpContext.Current.Request.Url.AbsoluteUri)
             };
 
