@@ -82,6 +82,22 @@ namespace RTR.IT.AS.ApplicationServer.Implementations
             return result;
         }
 
+        public bool RemoveExpiredRefreshTokens()
+        {
+            var result = false;
+
+            try
+            {
+                result = authInfrastructure.RemoveExpiredRefreshTokens();
+            }
+            finally
+            {
+                authInfrastructure.Dispose();
+            }
+
+            return result;
+        }
+
         public void Dispose()
         {
             if (authInfrastructure != null)

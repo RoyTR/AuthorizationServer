@@ -11,5 +11,6 @@ namespace RTR.IT.AS.Core.Contracts.Service
         RefreshToken GetRefreshToken(Filter filter);
         bool AddRefreshTokens(List<RefreshToken> jsonRefreshTokens);
         bool RemoveRefreshToken(Filter filter);
+        bool RemoveExpiredRefreshTokens();
     }
 }

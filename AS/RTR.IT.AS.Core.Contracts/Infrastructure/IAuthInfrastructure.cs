@@ -10,5 +10,6 @@ namespace RTR.IT.AS.Core.Contracts.Infrastructure
         RefreshToken GetRefreshToken(Filter filter);
         bool AddRefreshTokens(string entities);
         bool RemoveRefreshToken(Filter filter);
+        bool RemoveExpiredRefreshTokens();
     }
 }

@@ -88,6 +88,24 @@ namespace RTR.IT.AS.Infrastructure.Implementations
             return result;
         }
 
+        public bool RemoveExpiredRefreshTokens()
+        {
+            var result = false;
+
+            try
+            {
+                dataAccess.AddParameter("param", "");
+                dataAccess.ExcecuteProcedure("usp_del_expiredrefreshtokens");
+                result = true;
+            }
+            finally
+            {
+                dataAccess.Dispose();
+            }
+
+            return result;
+        }
+
         public void Dispose()
         {
             if (dataAccess != null)

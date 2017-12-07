@@ -3,6 +3,7 @@ using Microsoft.Owin;
 using Owin;
 using Microsoft.Owin.Security.OAuth;
 using RTR.IT.AS.Api.Providers;
+using RTR.IT.AS.Api.Jobs.Scheduler;
 
 [assembly: OwinStartup(typeof(RTR.IT.AS.Api.Startup))]
 
@@ -13,6 +14,7 @@ namespace RTR.IT.AS.Api
         public void Configuration(IAppBuilder app)
         {
             ConfigureOAuthTokenGeneration(app);
+            JobScheduler.Start();
         }
 
         public void ConfigureOAuthTokenGeneration(IAppBuilder app)
