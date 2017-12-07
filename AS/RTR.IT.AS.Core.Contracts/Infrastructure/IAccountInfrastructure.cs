@@ -6,6 +6,6 @@ namespace RTR.IT.AS.Core.Contracts.Infrastructure
 {
     public interface IAccountInfrastructure : IDisposable
     {
-        User GetUserAccount(Filter filter);
+        Usuario GetUserAccount(Filter filter);
     }
 }

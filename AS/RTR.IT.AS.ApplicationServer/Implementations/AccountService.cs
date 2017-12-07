@@ -15,9 +15,9 @@ namespace RTR.IT.AS.ApplicationServer.Implementations
             this.accountInfrastructure = accountInfrastructure;
         }
 
-        public User GetUserAccount(Filter filter)
+        public Usuario GetUserAccount(Filter filter)
         {
-            User result = null;
+            Usuario result = null;
 
             try
             {

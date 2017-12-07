@@ -44,7 +44,7 @@
     <Compile Include="App\Base\BaseDomain.cs" />
     <Compile Include="App\Client.cs" />
     <Compile Include="App\RefreshToken.cs" />
-    <Compile Include="App\User.cs" />
+    <Compile Include="App\Usuario.cs" />
     <Compile Include="Enums\ApplicationTypes.cs" />
     <Compile Include="Filter\Filter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

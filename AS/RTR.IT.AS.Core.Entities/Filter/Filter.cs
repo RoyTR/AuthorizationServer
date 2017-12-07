@@ -4,7 +4,7 @@ namespace RTR.IT.AS.Core.Entities.Filter
 {
     public class Filter : BaseDomain
     {
-        public string User { get; set; }
+        public string NombreUsuario { get; set; }
         public string Password { get; set; }
 
         public string ClientId { get; set; }

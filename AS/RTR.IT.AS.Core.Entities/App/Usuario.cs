@@ -2,7 +2,7 @@
 
 namespace RTR.IT.AS.Core.Entities.App
 {
-    public class User : BaseDomain
+    public class Usuario : BaseDomain
     {
         public string Nombres { get; set; }
         public string ApellidoPaterno { get; set; }

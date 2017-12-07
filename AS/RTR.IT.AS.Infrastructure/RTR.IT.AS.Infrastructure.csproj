@@ -47,7 +47,7 @@
     <Compile Include="Implementations\AuthInfrastructure.cs" />
     <Compile Include="Mappers\ClientMapper.cs" />
     <Compile Include="Mappers\RefreshTokenMapper.cs" />
-    <Compile Include="Mappers\UserMapper.cs" />
+    <Compile Include="Mappers\UsuarioMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

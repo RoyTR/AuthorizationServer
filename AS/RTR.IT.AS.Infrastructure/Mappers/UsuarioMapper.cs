@@ -7,15 +7,15 @@ using System.Data;
 
 namespace RTR.IT.AS.Infrastructure.Mappers
 {
-    internal static class UserMapper
+    internal static class UsuarioMapper
     {
-        internal static BaseResult<User> GetUsers(IDataReader reader)
+        internal static BaseResult<Usuario> GetUsers(IDataReader reader)
         {
-            List<User> result = new List<User>();
+            List<Usuario> result = new List<Usuario>();
 
             while (reader.Read())
             {
-                var user = new User
+                var user = new Usuario
                 {
                     Id = (int)reader["Id"],
                     Nombres = reader["Nombres"] != DBNull.Value ? reader["Nombres"].ToString() : null,

@@ -10,22 +10,22 @@ namespace RTR.IT.AS.Infrastructure.Implementations
 {
     public class AccountInfrastructure : IAccountInfrastructure
     {
-        private readonly SqlServerAccess<User> dataAccess;
+        private readonly SqlServerAccess<Usuario> dataAccess;
 
-        public AccountInfrastructure(SqlServerAccess<User> dataAccess)
+        public AccountInfrastructure(SqlServerAccess<Usuario> dataAccess)
         {
             this.dataAccess = dataAccess;
         }
 
-        public User GetUserAccount(Filter filter)
+        public Usuario GetUserAccount(Filter filter)
         {
-            User result;
+            Usuario result;
 
             try
             {
-                dataAccess.AddParameter("user", filter.User);
+                dataAccess.AddParameter("nombreUsuario", filter.NombreUsuario);
                 dataAccess.AddParameter("password", filter.Password);
-                result = dataAccess.ExcecuteProcedure("usp_sel_userlogin", UserMapper.GetUsers).Data.FirstOrDefault();
+                result = dataAccess.ExcecuteProcedure("usp_sel_userlogin", UsuarioMapper.GetUsers).Data.FirstOrDefault();
             }
             finally
             {
