@@ -9,5 +9,9 @@ namespace RTR.IT.AS.Core.Entities.Filter
 
         public string ClientId { get; set; }
         public string RefreshTokenId { get; set; }
+
+        public int EmpresaId { get; set; }
+        public int AplicacionId { get; set; }
+        public int UsuarioId { get; set; }
     }
 }

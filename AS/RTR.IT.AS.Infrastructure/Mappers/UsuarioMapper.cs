@@ -17,7 +17,7 @@ namespace RTR.IT.AS.Infrastructure.Mappers
             {
                 var user = new Usuario
                 {
-                    Id = (int)reader["Id"],
+                    Id = (int)reader["UsuarioId"],
                     Nombres = reader["Nombres"] != DBNull.Value ? reader["Nombres"].ToString() : null,
                     ApellidoPaterno = reader["ApellidoPaterno"] != DBNull.Value ? reader["ApellidoPaterno"].ToString() : null,
                     ApellidoMaterno = reader["ApellidoMaterno"] != DBNull.Value ? reader["ApellidoMaterno"].ToString() : null,
@@ -26,6 +26,22 @@ namespace RTR.IT.AS.Infrastructure.Mappers
                     CorreoElectronico = reader["CorreoElectronico"] != DBNull.Value ? reader["CorreoElectronico"].ToString() : null
                 };
                 result.Add(user);
+            }
+
+            return result.ConvertirListToResult(result.Count);
+        }
+
+        internal static BaseResult<Tarea> GetUserTasks(IDataReader reader)
+        {
+            List<Tarea> result = new List<Tarea>();
+
+            while (reader.Read())
+            {
+                var task = new Tarea
+                {
+                    Codigo = reader["CodigoUnico"].ToString()
+                };
+                result.Add(task);
             }
 
             return result.ConvertirListToResult(result.Count);

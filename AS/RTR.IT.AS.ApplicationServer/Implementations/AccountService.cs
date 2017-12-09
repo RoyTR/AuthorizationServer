@@ -3,6 +3,7 @@ using RTR.IT.AS.Core.Contracts.Service;
 using RTR.IT.AS.Core.Entities.App;
 using RTR.IT.AS.Core.Entities.Filter;
 using System;
+using System.Collections.Generic;
 
 namespace RTR.IT.AS.ApplicationServer.Implementations
 {
@@ -17,11 +18,27 @@ namespace RTR.IT.AS.ApplicationServer.Implementations
 
         public Usuario GetUserAccount(Filter filter)
         {
-            Usuario result = null;
+            Usuario result;
 
             try
             {
                 result = accountInfrastructure.GetUserAccount(filter);
+            }
+            finally
+            {
+                accountInfrastructure.Dispose();
+            }
+
+            return result;
+        }
+
+        public List<Tarea> GetUserTasks(Filter filter)
+        {
+            List<Tarea> result;
+
+            try
+            {
+                result = accountInfrastructure.GetUserTasks(filter);
             }
             finally
             {

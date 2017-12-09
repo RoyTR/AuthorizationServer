@@ -1,4 +1,5 @@
 ﻿using RTR.IT.AS.Core.Entities.App.Base;
+using System.Collections.Generic;
 
 namespace RTR.IT.AS.Core.Entities.App
 {
@@ -10,5 +11,7 @@ namespace RTR.IT.AS.Core.Entities.App
         public string NombreUsuario { get; set; }
         public string UrlFoto { get; set; }
         public string CorreoElectronico { get; set; }
+
+        public List<Tarea> Tareas { get; set; }
     }
 }

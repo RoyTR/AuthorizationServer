@@ -25,7 +25,7 @@ namespace RTR.IT.AS.Infrastructure.Implementations
             try
             {
                 dataAccess.AddParameter("clientId", filter.ClientId);
-                result = dataAccess.ExcecuteProcedure("usp_sel_clients", ClientMapper.GetClients).Data.FirstOrDefault();
+                result = dataAccess.ExcecuteProcedure("oauth.usp_sel_clients", ClientMapper.GetClients).Data.FirstOrDefault();
             }
             finally
             {
@@ -42,7 +42,7 @@ namespace RTR.IT.AS.Infrastructure.Implementations
             try
             {
                 dataAccess.AddParameter("refreshTokenId", filter.RefreshTokenId);
-                result = dataAccess.ExcecuteProcedure("usp_sel_refreshtokens", RefreshTokenMapper.GetRefreshTokens).Data.FirstOrDefault();
+                result = dataAccess.ExcecuteProcedure("oauth.usp_sel_refreshtokens", RefreshTokenMapper.GetRefreshTokens).Data.FirstOrDefault();
             }
             finally
             {
@@ -59,7 +59,7 @@ namespace RTR.IT.AS.Infrastructure.Implementations
             try
             {
                 dataAccess.AddParameter("xmlRefreshTokens", entities);
-                dataAccess.ExcecuteProcedure("usp_ins_refreshtokens");
+                dataAccess.ExcecuteProcedure("oauth.usp_ins_refreshtokens");
                 result = true;
             }
             finally
@@ -77,7 +77,7 @@ namespace RTR.IT.AS.Infrastructure.Implementations
             try
             {
                 dataAccess.AddParameter("refreshTokenId", filter.RefreshTokenId);
-                dataAccess.ExcecuteProcedure("usp_del_refreshtoken");
+                dataAccess.ExcecuteProcedure("oauth.usp_del_refreshtoken");
                 result = true;
             }
             finally
@@ -95,7 +95,7 @@ namespace RTR.IT.AS.Infrastructure.Implementations
             try
             {
                 dataAccess.AddParameter("param", "");
-                dataAccess.ExcecuteProcedure("usp_del_expiredrefreshtokens");
+                dataAccess.ExcecuteProcedure("oauth.usp_del_expiredrefreshtokens");
                 result = true;
             }
             finally
